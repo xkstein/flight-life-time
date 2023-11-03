@@ -23,6 +23,14 @@
 
   /** @type {number} */
   var life_expect;
+
+  let today = new Date();
+
+  /** @type {number} */
+  const my_life_expect = 74.6;
+
+  /** @type {number} */
+  var age = today.getFullYear() - 2000 - ((today.getMonth() > 5) ? 0 : 1);
 </script>
 
 <main>
@@ -60,7 +68,7 @@
   <br />
   <br />
 
-  By subtracting this from your predicted lifespan, we can find the average ammount of time it'll cost you to take this flight.
+  By subtracting this from your predicted lifespan, we can find the average amount of time it'll cost you to take this flight.
 
   <Katex displayMode>
     {#if life_expect}
@@ -82,11 +90,22 @@
   </Katex>
 
   <hgroup>
-    <!--
-    <p>It's important to remember</p>
-    -->
     <p>By driving</p>
     <h1>You are wasting valuable time on earth</h1>
+  </hgroup>
+
+  I am currently {age} and my life expectancy {my_life_expect} years. 
+  {#if age > my_life_expect}
+    Therefore, I am probably dead.
+  {:else}
+    This means, that the average amount of time I loose by dying in a flight is {yr2sec((my_life_expect - age) / 2e7).toPrecision(4)} seconds. 
+
+    Driving to Chicago from NYC takes 10 hours longer than flying. This means that by driving rather flying, whien I reach Chicago I will be {(yr2sec(10) - yr2sec((my_life_expect - age) / 2e7)).toPrecision(4)} seconds closer to dying.
+  {/if}
+
+  <hgroup>
+    <p>These are facts</p>
+    <h1>There are rarely exceptions</h1>
   </hgroup>
 
   So if it takes <input placeholder="y" type="number" bind:value={hours_drive} min="0" /> more hours for you to drive to your destination, you would need to be planning to live to
