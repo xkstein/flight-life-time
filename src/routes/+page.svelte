@@ -15,7 +15,15 @@
    * @return {number}
    */
   function yr2sec(year) {
-    return year * 365 * 24 * 60 * 60
+    return year * 365.25 * 24 * 60 * 60
+  }
+
+  /**
+   * @param {number} sec
+   * @return {number}
+   */
+  function sec2hr(sec) {
+    return sec / ( 60 * 60 )
   }
 
   /** @type {number} */
@@ -25,22 +33,26 @@
   var life_expect;
 
   let today = new Date();
+  let birth = new Date('June 19, 2000');
 
   /** @type {number} */
   const my_life_expect = 74.6;
 
   /** @type {number} */
-  var age = today.getFullYear() - 2000 - ((today.getMonth() > 5) ? 0 : 1);
+  var age = ( (today - birth) / ( 1000 * 60 * 60 * 24 * 365.25 ) ).toPrecision(4);
+  // var age = today.getFullYear() - 2000 - ((today.getMonth() > 5) ? 0 : 1);
 </script>
 
 <main>
+
+  <h1>Flight Safety Using Weighted Sums</h1>
 
   <hgroup>
     <!--
     <p>It's important to remember</p>
     -->
     <p>please remember</p>
-    <h1>We're all dying always</h1>
+    <h2>We're all dying always</h2>
   </hgroup>
 
   If there is one commercial plane crash every 20 million flights, and you've got <input placeholder="x" type="number" bind:value={life_expect} min="0" /> more years to live in general, we can find your average lifespan if you take this flight.
@@ -91,21 +103,22 @@
 
   <hgroup>
     <p>By driving</p>
-    <h1>You are wasting valuable time on earth</h1>
+    <h2>You are wasting valuable time on earth</h2>
   </hgroup>
 
-  I am currently {age} and my life expectancy {my_life_expect} years. 
+  I am currently {age} years old and my life expectancy is {my_life_expect} years. 
   {#if age > my_life_expect}
     Therefore, I am probably dead.
   {:else}
-    This means, that the average amount of time I loose by dying in a flight is {yr2sec((my_life_expect - age) / 2e7).toPrecision(4)} seconds. 
-
-    Driving to Chicago from NYC takes 10 hours longer than flying. This means that by driving rather flying, whien I reach Chicago I will be {(yr2sec(10) - yr2sec((my_life_expect - age) / 2e7)).toPrecision(4)} seconds closer to dying.
+    So, I have roughly {(my_life_expect - age).toPrecision(4)} years left to live and the average amount of time I loose by dying in a flight each time I take one is {yr2sec((my_life_expect - age) / 2e7).toPrecision(4)} seconds. 
+    <br />
+    <br />
+    Driving to Chicago from NYC takes 10 hours longer than flying. This means that if I drove, I would reach Chicago (on average) {sec2hr(10 * 60 * 60 - yr2sec((my_life_expect - age) / 2e7)).toPrecision(4)} hours closer to dying than if I had taken a flight ({(100 * (10 * 60 * 60 - yr2sec((my_life_expect - age) / 2e7)) / (today - birth) / 1000).toExponential(3)}% of my remaining life).
   {/if}
 
   <hgroup>
-    <p>These are facts</p>
-    <h1>There are rarely exceptions</h1>
+    <p>For driving to be worth it,</p>
+    <h2>How long would you need to live?<h2>
   </hgroup>
 
   So if it takes <input placeholder="y" type="number" bind:value={hours_drive} min="0" /> more hours for you to drive to your destination, you would need to be planning to live to
@@ -141,7 +154,7 @@
     margin-bottom: 1rem;
   }
 
-  hgroup h1 {
+  hgroup h2 {
     margin-top: 0;
     margin-bottom: 0;
     text-transform: uppercase;
@@ -155,7 +168,13 @@
     color: red;
   }
 
+  h2 {
+    font-size: x-large;
+  }
+
   h1 {
-    font-size: 1.8rem;
+    font-size: xx-large;
+    margin-top: 3rem;
+    text-align: center;
   }
 </style>
