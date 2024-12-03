@@ -7,50 +7,49 @@
 		<link rel="mask-icon" href="./mask-icon.svg" color="#000000" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
-		<link href="./_app/immutable/assets/2.f7c75db6.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.a4a0a0c7.js">
+		<link href="./_app/immutable/assets/0.4d1d3f4c.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/2.57bf7740.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.29f5d748.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.e108d1fd.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.4b3619b8.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.96def53d.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.01c1a135.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.74a18929.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index.54605d54.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.c329c537.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/2.d01ead6e.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.9396071b.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.81cf332d.js">
     <!-- Katex stylesheet -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">  <main class="svelte-1hj3bbf"><h1 class="svelte-1hj3bbf" data-svelte-h="svelte-1463esz">Flight Safety Using Weighted Sums</h1> <hgroup class="svelte-1hj3bbf" data-svelte-h="svelte-5eit3b"> <p class="svelte-1hj3bbf">please remember</p> <h2 class="svelte-1hj3bbf">We&#39;re all dying always</h2></hgroup>
+		<div style="display: contents">  <main class="svelte-1h7eyza"><h1 class="svelte-1jymvnn" data-svelte-h="svelte-1463esz">Flight Safety Using Weighted Sums</h1> <hgroup class="svelte-1jymvnn" data-svelte-h="svelte-1mtijpj"> <p class="svelte-1jymvnn">please remember</p> <h2 class="svelte-1jymvnn">We&#39;re all dying always</h2></hgroup>
 
-  If there is one commercial plane crash every 20 million flights, and you&#39;ve got <input placeholder="x" type="number" min="0" class="svelte-1hj3bbf"> more years to live in general, we can find your average lifespan if you take this flight.
+If there is one commercial plane crash every 20 million flights, and you&#39;ve got <input placeholder="x" type="number" min="0" class="svelte-1jymvnn"> more years to live in general, we can find your average lifespan if you take this flight.
 
-   <span style="display: none;">\text{your average lifespan after taking this flight} = \frac{(20 \text{ million} - 1) * x + 0}{20 \text{ million}}</span>  <span></span>
+ <span style="display: none;">\text{your average lifespan after taking this flight} = \frac{(20 \text{ million} - 1) * x + 0}{20 \text{ million}}</span>  <span></span>
 
-  20 million - 1 of you keep living for 
-   <span style="display: none;">x</span>  <span></span> longer
-  while 1 of you dies on the plane, living 0 more time.
+20 million - 1 of you keep living for 
+ <span style="display: none;">x</span>  <span></span> longer
+while 1 of you dies on the plane, living 0 more time.
 
+<br> <br>
+
+By subtracting this from your predicted lifespan, we can find the average amount of time it&#39;ll cost you to take this flight.
+
+ <span style="display: none;">\begin{align*}\text{Average time lost by dying in a flight} &amp;= x - \frac{20 \text{ million}-1}{20 \text{ million}}x \newline&amp;= \frac{1}{20 \text{ million}}x\end{align*}</span>  <span></span> <hgroup class="svelte-1jymvnn" data-svelte-h="svelte-1g1aag0"><p class="svelte-1jymvnn">By driving</p> <h2 class="svelte-1jymvnn">You are wasting valuable time on earth</h2></hgroup>
+
+I am currently 24.46 years old and my life expectancy is 74.6 years. 
+So, I have roughly 50.14 years left to live and the average amount of time I loose by dying in a flight each time I take one is 79.11 seconds. 
   <br> <br>
+  Driving to Chicago from NYC takes 10 hours longer than flying. This means that if I drove, I would reach Chicago (on average) 9.978 hours closer to dying than if I had taken a flight (4.654e-9% of my remaining life). <hgroup class="svelte-1jymvnn" data-svelte-h="svelte-16ex6hg"><p class="svelte-1jymvnn">For driving to be worth it,</p> <h2 class="svelte-1jymvnn">How long would you need to live?<h2 class="svelte-1jymvnn"></h2></h2></hgroup>
 
-  By subtracting this from your predicted lifespan, we can find the average amount of time it&#39;ll cost you to take this flight.
+So if it takes <input placeholder="y" type="number" min="0" class="svelte-1jymvnn"> more hours for you to drive to your destination, you would need to be planning to live to
 
-   <span style="display: none;">\begin{align*}\text{Average time lost by dying in a flight} &amp;= x - \frac{20 \text{ million}-1}{20 \text{ million}}x \newline&amp;= \frac{1}{20 \text{ million}}x\end{align*}</span>  <span></span> <hgroup class="svelte-1hj3bbf" data-svelte-h="svelte-41zr34"><p class="svelte-1hj3bbf">By driving</p> <h2 class="svelte-1hj3bbf">You are wasting valuable time on earth</h2></hgroup>
+ <span style="display: none;">x = 20 \text{ million} * y</span>  <span></span>
 
-  I am currently 24.46 years old and my life expectancy is 74.6 years. 
-  So, I have roughly 50.14 years left to live and the average amount of time I loose by dying in a flight each time I take one is 79.11 seconds. 
-    <br> <br>
-    Driving to Chicago from NYC takes 10 hours longer than flying. This means that if I drove, I would reach Chicago (on average) 9.978 hours closer to dying than if I had taken a flight (4.654e-9% of my remaining life). <hgroup class="svelte-1hj3bbf" data-svelte-h="svelte-1rh2cgk"><p class="svelte-1hj3bbf">For driving to be worth it,</p> <h2 class="svelte-1hj3bbf">How long would you need to live?<h2 class="svelte-1hj3bbf"></h2></h2></hgroup>
-
-  So if it takes <input placeholder="y" type="number" min="0" class="svelte-1hj3bbf"> more hours for you to drive to your destination, you would need to be planning to live to
-
-   <span style="display: none;">x = 20 \text{ million} * y</span>  <span></span>
-
-  in order to have a greater average loss of time than the extra time driving
-
-</main> 
+in order to have a greater average loss of time than the extra time driving </main> 
 			
 			<script>
 				{
-					__sveltekit_ida911 = {
+					__sveltekit_11oynp8 = {
 						base: new URL(".", location).pathname.slice(0, -1),
 						env: {}
 					};
@@ -60,8 +59,8 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("./_app/immutable/entry/start.a4a0a0c7.js"),
-						import("./_app/immutable/entry/app.96def53d.js")
+						import("./_app/immutable/entry/start.29f5d748.js"),
+						import("./_app/immutable/entry/app.74a18929.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 2],
